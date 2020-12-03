@@ -15,6 +15,8 @@ private:
 public:
 	Game(unsigned int width, unsigned int height, const char* title);
 
+	Game(const Game&) = delete;
+
 	static void run();
 
 	static sf::Vector2i getMousePosition();

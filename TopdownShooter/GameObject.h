@@ -26,4 +26,9 @@ public:
 	{
 		sprite.setPosition(pos);
 	}
+
+	virtual void setRotation(float a)
+	{
+		sprite.setRotation(a);
+	}
 };

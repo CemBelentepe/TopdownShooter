@@ -12,7 +12,13 @@ protected:
 	std::unordered_map<std::string, sf::Texture> resources;
 
 public:
-	virtual ~Level(){}
+	virtual ~Level()
+	{
+		for (auto& go : gameObjects)
+			delete go;
+		for (auto& go : toAdd)
+			delete go;
+	}
 	virtual void update(sf::RenderWindow& window, float deltaTime)
 	{
 		for (auto& go : toAdd)

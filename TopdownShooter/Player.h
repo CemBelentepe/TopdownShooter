@@ -5,6 +5,7 @@
 class Player : public GameObject
 {
 private:
+	float cooldown;
 public:
 	Player(sf::Texture& texture);
 

@@ -7,7 +7,7 @@
 #include "Bullet.h"
 
 Player::Player(sf::Texture& texture)
-	: GameObject(texture)
+	: GameObject(texture), cooldown(0.5f)
 {
 	sprite.setOrigin(texture.getSize().x / 2, texture.getSize().y / 2);
 }
@@ -30,8 +30,14 @@ void Player::update(float deltaTime)
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
 		Game::attachLevel(new Level1());
 
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) 
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && cooldown <= 0) 
 	{
-		Game::addGameObject(new Bullet(Game::getTexture("bullet")))->setPosition(sprite.getPosition());
+		GameObject* bullet = new Bullet(Game::getTexture("bullet"));
+		bullet->setPosition(sprite.getPosition());
+		bullet->setRotation(sprite.getRotation());
+		Game::addGameObject(bullet);
+		cooldown = 0.5f;
 	}
+
+	cooldown -= deltaTime;
 }

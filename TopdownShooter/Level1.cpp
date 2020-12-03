@@ -13,6 +13,4 @@ Level1::Level1()
 Level1::~Level1()
 {
 	std::cout << "Level1 destroyed" << std::endl;
-	for(auto& go : gameObjects)
-		delete go;
 }
