@@ -3,32 +3,31 @@
 
 class GameObject
 {
-protected:
-	sf::Sprite sprite;
-
 public:
-	GameObject(sf::Texture& texture)
-		: sprite(texture) 
+	GameObject()
 	{ }
 
-	virtual void update(float deltaTime) { }
-	virtual void render(sf::RenderWindow& window)
-	{
-		window.draw(sprite);
-	}
+	virtual void update(float deltaTime) {}
+	virtual void render(sf::RenderWindow& window) {};
 
 	virtual bool isAlive()
 	{
 		return true;
 	}
+};
 
-	virtual void setPosition(sf::Vector2f pos)
-	{
-		sprite.setPosition(pos);
-	}
+class SpriteObject : public GameObject
+{
+public:
+	sf::Sprite sprite;
 
-	virtual void setRotation(float a)
+public:
+	SpriteObject(sf::Texture& texture)
+		: sprite(texture)
+	{ }
+
+	void render(sf::RenderWindow& window) override
 	{
-		sprite.setRotation(a);
+		window.draw(sprite);
 	}
 };

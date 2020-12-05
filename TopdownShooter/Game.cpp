@@ -70,3 +70,8 @@ sf::Texture& Game::getTexture(const std::string& str)
 {
 	return instance->level->getTexture(str);
 }
+
+const sf::RenderWindow& Game::getWindow()
+{
+	return instance->window;
+}
