@@ -45,5 +45,11 @@
     <ClInclude Include="Bullet.h">
       <Filter>TopDownShooter</Filter>
     </ClInclude>
+    <ClInclude Include="Tilemap.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -38,10 +38,10 @@ void Game::run()
 			instance->nextLevel = nullptr;
 		}
 
-		instance->level->update(instance->window, deltaTime);
+		instance->level->update(deltaTime);
 
 		instance->window.clear();
-		instance->level->render(instance->window);
+		instance->level->render(instance->window, deltaTime);
 		instance->window.display();
 	}
 }
@@ -69,4 +69,9 @@ GameObject* Game::addGameObject(GameObject* go)
 sf::Texture& Game::getTexture(const std::string& str)
 {
 	return instance->level->getTexture(str);
+}
+
+const sf::RenderWindow& Game::getWindow()
+{
+	return instance->window;
 }

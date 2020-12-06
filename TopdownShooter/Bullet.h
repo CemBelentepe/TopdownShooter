@@ -1,15 +1,15 @@
 #pragma once
 #include "GameObject.h"
 
-class Bullet : public GameObject
+class TileObject;
+class Bullet : public SpriteObject
 {
 private:
 	float speed;
+	TileObject* tilemap;
 public:
-	Bullet(sf::Texture& texture)
-		: GameObject(texture), speed(800)
-	{}
+	Bullet(sf::Texture& texture, TileObject* tilemap);
 
 	void update(float deltaTime) override;
+	bool isAlive() override;
 };
-

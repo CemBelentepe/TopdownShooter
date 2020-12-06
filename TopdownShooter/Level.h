@@ -19,7 +19,7 @@ public:
 		for (auto& go : toAdd)
 			delete go;
 	}
-	virtual void update(sf::RenderWindow& window, float deltaTime)
+	virtual void update(float deltaTime)
 	{
 		for (auto& go : toAdd)
 			gameObjects.push_back(go);
@@ -37,10 +37,10 @@ public:
 		for (auto& go : gameObjects)
 			go->update(deltaTime);
 	}
-	virtual void render(sf::RenderWindow& window) 
+	virtual void render(sf::RenderWindow& window, float deltaTime)
 	{
 		for (auto& go : gameObjects)
-			go->render(window);
+			go->render(window, deltaTime);
 	}
 	virtual GameObject* addGameObject(GameObject* object)
 	{
