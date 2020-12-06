@@ -13,6 +13,8 @@ Level1::Level1()
 	resources["tile2"].loadFromFile("res/tile2.png");
 	resources["tile3"].loadFromFile("res/tile3.png");
 
+	resources["explosion"].loadFromFile("res/explosion.png");
+
 	std::vector<TileInfo> tileset{ TileInfo(resources["tile1"]), TileInfo(resources["tile2"], true), TileInfo(resources["tile3"], true) };
 
 	std::vector<std::vector<size_t>> map{

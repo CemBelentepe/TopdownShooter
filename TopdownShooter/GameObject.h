@@ -8,7 +8,7 @@ public:
 	{ }
 
 	virtual void update(float deltaTime) {}
-	virtual void render(sf::RenderWindow& window) {};
+	virtual void render(sf::RenderWindow& window, float deltaTime) {};
 
 	virtual bool isAlive()
 	{
@@ -26,7 +26,7 @@ public:
 		: sprite(texture)
 	{ }
 
-	void render(sf::RenderWindow& window) override
+	void render(sf::RenderWindow& window, float deltaTime) override
 	{
 		window.draw(sprite);
 	}

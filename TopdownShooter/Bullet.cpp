@@ -3,6 +3,7 @@
 
 #include "Bullet.h"
 #include "Tilemap.h"
+#include "Animation.h"
 
 Bullet::Bullet(sf::Texture& texture, TileObject* tilemap)
 	: SpriteObject(texture), speed(800), tilemap(tilemap)
@@ -13,6 +14,14 @@ void Bullet::update(float deltaTime)
 	sf::Vector2f dx(std::cos(sprite.getRotation() / 180 * M_PI),std::sin(sprite.getRotation() / 180 * M_PI));
 	dx *= speed * deltaTime;
 	sprite.move(dx);
+
+	if (!isAlive())
+	{
+		AnimObject* anim = new AnimObject(Game::getTexture("explosion"), 8, 0.04f);
+		anim->sprite.setPosition(sprite.getPosition());
+		anim->sprite.setScale(0.5f, 0.5f);
+		Game::addGameObject(anim);
+	}
 }
 
 bool Bullet::isAlive()

@@ -28,7 +28,7 @@ public:
 		sprite.setPosition(pos);
 	}
 
-	void render(sf::RenderWindow& window)
+	void render(sf::RenderWindow& window, float deltaTime)
 	{
 		window.draw(sprite);
 	}
@@ -62,13 +62,13 @@ public:
 		}
 	}
 
-	void render(sf::RenderWindow& window) override
+	void render(sf::RenderWindow& window, float deltaTime) override
 	{
 		for (auto& row : tilemap)
 		{
 			for (auto& tile : row)
 			{
-				tile.render(window);
+				tile.render(window, deltaTime);
 			}
 		}
 	}

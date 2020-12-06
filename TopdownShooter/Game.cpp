@@ -38,10 +38,10 @@ void Game::run()
 			instance->nextLevel = nullptr;
 		}
 
-		instance->level->update(instance->window, deltaTime);
+		instance->level->update(deltaTime);
 
 		instance->window.clear();
-		instance->level->render(instance->window);
+		instance->level->render(instance->window, deltaTime);
 		instance->window.display();
 	}
 }
