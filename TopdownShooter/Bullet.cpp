@@ -15,7 +15,7 @@ void Bullet::update(float deltaTime)
 	dx *= speed * deltaTime;
 	sprite.move(dx);
 
-	if (!isAlive())
+	if (tilemap->canCollide(sprite.getPosition()))
 	{
 		AnimObject* anim = new AnimObject(Game::getTexture("explosion"), 8, 0.04f);
 		anim->sprite.setPosition(sprite.getPosition());
