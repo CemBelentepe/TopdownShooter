@@ -1,6 +1,7 @@
 #include "Level1.h"
 #include "Player.h"
 #include "Tilemap.h"
+#include "Barrel.h"
 
 #include <iostream>
 
@@ -14,6 +15,8 @@ Level1::Level1()
 	resources["tile3"].loadFromFile("res/tile3.png");
 
 	resources["explosion"].loadFromFile("res/explosion.png");
+
+	resources["barrel"].loadFromFile("res/barrel.png");
 
 	std::vector<TileInfo> tileset{ TileInfo(resources["tile1"]), TileInfo(resources["tile2"], true), TileInfo(resources["tile3"], true) };
 
@@ -32,6 +35,9 @@ Level1::Level1()
 	TileObject* tilemap = new TileObject(tileset, map);
 	gameObjects.push_back(tilemap);
 	gameObjects.push_back(new Player(resources["player"], tilemap));
+	gameObjects.push_back(new Barrel(resources["barrel"], sf::Vector2f(5.5 * 64, 5.5 * 64)));
+	gameObjects.push_back(new Barrel(resources["barrel"], sf::Vector2f(9.5 * 64, 5.5 * 64)));
+	gameObjects.push_back(new Barrel(resources["barrel"], sf::Vector2f(3.5 * 64, 7.5 * 64)));
 }
 
 Level1::~Level1()

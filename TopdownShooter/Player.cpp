@@ -8,7 +8,7 @@
 #include "Bullet.h"
 
 Player::Player(sf::Texture& texture, TileObject* tilemap)
-	: SpriteObject(texture), cooldown(0.0f), tilemap(tilemap)
+	: SpriteObject(texture, (int)Tag::Player), cooldown(0.0f), tilemap(tilemap)
 {
 	sprite.setOrigin(texture.getSize().x / 2, texture.getSize().y / 2);
 }
@@ -39,7 +39,7 @@ void Player::update(float deltaTime)
 
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && cooldown <= 0) 
 	{
-		SpriteObject* bullet = new Bullet(Game::getTexture("bullet"), tilemap);
+		SpriteObject* bullet = new Bullet(Game::getTexture("bullet"), tilemap, (int)Tag::Player_Bullet);
 		bullet->sprite.setPosition(sprite.getPosition());
 		bullet->sprite.setRotation(sprite.getRotation());
 		Game::addGameObject(bullet);

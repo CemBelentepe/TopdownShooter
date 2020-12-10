@@ -8,7 +8,9 @@ private:
 	float speed;
 	TileObject* tilemap;
 public:
-	Bullet(sf::Texture& texture, TileObject* tilemap);
+	int health = 1;
+public:
+	Bullet(sf::Texture& texture, TileObject* tilemap, int tag);
 
 	void update(float deltaTime) override;
 	bool isAlive() override;

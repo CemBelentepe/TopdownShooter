@@ -11,8 +11,8 @@ private:
 	sf::IntRect frameRect;
 	bool onlyOnce;
 public:
-	AnimObject(sf::Texture& texture, int frames, float animTime, bool onlyOnce = true)
-		: SpriteObject(texture), current_step(0), frameTime(animTime), frames(frames), animTime(animTime), 
+	AnimObject(sf::Texture& texture, int frames, float animTime, bool onlyOnce = true, int tag = 0)
+		: SpriteObject(texture, tag), current_step(0), frameTime(animTime), frames(frames), animTime(animTime), 
 		frameRect(sf::Vector2i(0, 0), sf::Vector2i(texture.getSize().x / frames, texture.getSize().y)),
 		onlyOnce(onlyOnce)
 	{

@@ -1,9 +1,8 @@
 #pragma once
 #include "Level.h"
+#include "Tags.h"
 #include <vector>
 
-class Player;
-class GameObject;
 class Level1 : public Level
 {
 private:

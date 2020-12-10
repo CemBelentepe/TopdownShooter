@@ -51,4 +51,15 @@ public:
 	{
 		return resources[str];
 	}
+
+	std::vector<GameObject*> getGameObjectsWithTag(int tag)
+	{
+		std::vector<GameObject*> ret;
+		for (auto& go : gameObjects)
+		{
+			if (go->tag == tag)
+				ret.push_back(go);
+		}
+		return ret;
+	}
 };
