@@ -40,7 +40,7 @@ Level1::Level1()
 	gameObjects.push_back(new Barrel(resources["barrel"], sf::Vector2f(5.5 * 64, 5.5 * 64)));
 	gameObjects.push_back(new Barrel(resources["barrel"], sf::Vector2f(9.5 * 64, 5.5 * 64)));
 	gameObjects.push_back(new Barrel(resources["barrel"], sf::Vector2f(3.5 * 64, 7.5 * 64)));
-	gameObjects.push_back(new Enemy (resources["enemy"],  sf::Vector2f(9.5 * 64, 7.5 * 64), tilemap));
+	gameObjects.push_back(new Enemy(resources["enemy"], sf::Vector2f(9.5 * 64, 7.5 * 64), tilemap));
 }
 
 Level1::~Level1()

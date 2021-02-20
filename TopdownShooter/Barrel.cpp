@@ -13,7 +13,7 @@ Barrel::Barrel(sf::Texture& texture, sf::Vector2f pos)
 void Barrel::update(float deltaTime)
 {
 	std::vector<GameObject*> bullets = Game::getGameObjectsWithTags({ (int)(Tag::Player_Bullet), (int)(Tag::Enemy_Bullet) });
-	
+
 	for (auto& go : bullets)
 	{
 		Bullet* bullet = dynamic_cast<Bullet*>(go);

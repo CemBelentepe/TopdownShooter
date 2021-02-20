@@ -48,7 +48,7 @@ void Enemy::update(float deltaTime)
 		Game::addGameObject(bullet);
 		cooldown = 2;
 	}
-
+  
 	cooldown -= deltaTime;
 
 	std::vector<GameObject*> bullets = Game::getGameObjectsWithTag((int)(Tag::Player_Bullet));

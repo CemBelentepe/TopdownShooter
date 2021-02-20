@@ -3,13 +3,14 @@
 
 #include "Tilemap.h"
 #include "Level1.h"
+#include "Animation.h"
 
 #include "Player.h"
 #include "Bullet.h"
-#include "Animation.h"
+#include "Tags.h"
 
 Player::Player(sf::Texture& texture, TileObject* tilemap)
-	: SpriteObject(texture, (int)Tag::Player), cooldown(0.0f), tilemap(tilemap), health(3)
+	: SpriteObject(texture, (int)Tag::Player), cooldown(0.0f), tilemap(tilemap), health(8)
 {
 	sprite.setOrigin(texture.getSize().x / 2, texture.getSize().y / 2);
 }

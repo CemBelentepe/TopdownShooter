@@ -5,7 +5,7 @@ class GameObject
 {
 public:
 	int tag;
-
+  
 public:
 	GameObject(int tag = 0)
 		: tag(tag)	{ }
