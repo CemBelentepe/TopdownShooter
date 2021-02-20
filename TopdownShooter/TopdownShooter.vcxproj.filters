@@ -25,6 +25,9 @@
     <ClCompile Include="Bullet.cpp">
       <Filter>TopDownShooter</Filter>
     </ClCompile>
+    <ClCompile Include="Barrel.cpp">
+      <Filter>TopDownShooter</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -51,5 +54,9 @@
     <ClInclude Include="Animation.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="Tags.h">
+      <Filter>TopDownShooter</Filter>
+    </ClInclude>
+    <ClInclude Include="Barrel.h" />
   </ItemGroup>
 </Project>

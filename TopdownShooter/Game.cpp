@@ -71,6 +71,17 @@ sf::Texture& Game::getTexture(const std::string& str)
 	return instance->level->getTexture(str);
 }
 
+const Level* Game::getLevel()
+{
+	return instance->level;
+}
+
+std::vector<GameObject*> Game::getGameObjectsWithTag(int tag)
+{
+	return instance->level->getGameObjectsWithTag(tag);
+}
+
+
 const sf::RenderWindow& Game::getWindow()
 {
 	return instance->window;

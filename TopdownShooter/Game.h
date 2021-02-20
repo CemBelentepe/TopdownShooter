@@ -24,6 +24,8 @@ public:
 	static Game* getInstance();
 	static GameObject* addGameObject(GameObject* go);
 	static sf::Texture& getTexture(const std::string& str);
+	static const Level* getLevel();
+	static std::vector<GameObject*> getGameObjectsWithTag(int tag);
 
 	static const sf::RenderWindow& getWindow();
 };

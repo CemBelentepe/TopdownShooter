@@ -2,8 +2,6 @@
 #include "Level.h"
 #include <vector>
 
-class Player;
-class GameObject;
 class Level1 : public Level
 {
 private:

@@ -5,8 +5,8 @@
 #include "Tilemap.h"
 #include "Animation.h"
 
-Bullet::Bullet(sf::Texture& texture, TileObject* tilemap)
-	: SpriteObject(texture), speed(800), tilemap(tilemap)
+Bullet::Bullet(sf::Texture& texture, TileObject* tilemap, int tag)
+	: SpriteObject(texture, tag), speed(800), tilemap(tilemap)
 {}
 
 void Bullet::update(float deltaTime)
@@ -28,5 +28,5 @@ bool Bullet::isAlive()
 {
 	sf::Vector2f pos = sprite.getPosition();
 	sf::Vector2u size = Game::getWindow().getSize();
-	return !tilemap->canCollide(pos) && pos.x > 0 && pos.x < size.x && pos.y > 0 && pos.y < size.y;
+	return health > 0 && !tilemap->canCollide(pos) && pos.x > 0 && pos.x < size.x && pos.y > 0 && pos.y < size.y;
 }
