@@ -28,6 +28,9 @@
     <ClCompile Include="Barrel.cpp">
       <Filter>TopDownShooter</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>TopDownShooter</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -57,6 +60,11 @@
     <ClInclude Include="Tags.h">
       <Filter>TopDownShooter</Filter>
     </ClInclude>
-    <ClInclude Include="Barrel.h" />
+    <ClInclude Include="Barrel.h">
+      <Filter>TopDownShooter</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>TopDownShooter</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

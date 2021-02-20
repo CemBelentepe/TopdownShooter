@@ -91,6 +91,7 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Barrel.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Level1.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -99,6 +100,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Barrel.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Level.h" />

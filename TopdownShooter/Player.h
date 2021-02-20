@@ -8,6 +8,7 @@ class Player : public SpriteObject
 private:
 	TileObject* tilemap;
 	float cooldown;
+	float health;
 
 public:
 	Player(sf::Texture& texture, TileObject* tilemap);

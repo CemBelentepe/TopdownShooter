@@ -3,13 +3,14 @@
 
 #include "Tilemap.h"
 #include "Level1.h"
+#include "Animation.h"
 
 #include "Player.h"
 #include "Bullet.h"
 #include "Tags.h"
 
 Player::Player(sf::Texture& texture, TileObject* tilemap)
-	: SpriteObject(texture, (int)Tag::Player), cooldown(0.0f), tilemap(tilemap)
+	: SpriteObject(texture, (int)Tag::Player), cooldown(0.0f), tilemap(tilemap), health(8)
 {
 	sprite.setOrigin(texture.getSize().x / 2, texture.getSize().y / 2);
 }
@@ -48,4 +49,30 @@ void Player::update(float deltaTime)
 	}
 
 	cooldown -= deltaTime;
+
+	std::vector<GameObject*> bullets = Game::getGameObjectsWithTag((int)(Tag::Enemy_Bullet));
+	for (auto& go : bullets)
+	{
+		Bullet* bullet = dynamic_cast<Bullet*>(go);
+		if (bullet)
+		{
+			sf::Vector2u size = sprite.getTexture()->getSize();
+			sf::FloatRect collider(sprite.getPosition() - sprite.getOrigin(), sf::Vector2f(size.x, size.y));
+			if (collider.contains(bullet->sprite.getPosition()))
+			{
+				this->health--;
+				bullet->health--;
+
+				AnimObject* anim = new AnimObject(Game::getTexture("explosion"), 8, 0.04f);
+				anim->sprite.setPosition(sprite.getPosition());
+				anim->sprite.setScale(0.25f, 0.25f);
+				Game::addGameObject(anim);
+			}
+		}
+	}
+
+	if (health < 0)
+	{
+		// TODO Gameover
+	}
 }
