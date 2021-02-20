@@ -37,6 +37,11 @@ public:
 	{
 		return info;
 	}
+
+	void setInfo(TileInfo* info)
+	{
+		this->info = info;
+	}
 };
 
 class TileObject : public GameObject
@@ -45,8 +50,8 @@ public:
 	std::vector<TileInfo> tileset;
 	std::vector<std::vector<Tile>> tilemap;
 public:
-	TileObject(std::vector<TileInfo> tileset, std::vector<std::vector<size_t>> tilemapInfo)
-		: tileset(tileset)
+	TileObject(std::vector<TileInfo> tileset, std::vector<std::vector<size_t>> tilemapInfo, int tag = 0)
+		: GameObject(tag), tileset(tileset)
 	{
 		sf::Vector2u size = tileset[0].texture.getSize();
 

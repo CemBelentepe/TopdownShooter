@@ -24,14 +24,13 @@ void Player::update(float deltaTime)
 	};
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-		moveIfCan(-300 * deltaTime, 0);
+		moveIfCan(-192 * deltaTime, 0);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-		moveIfCan(300 * deltaTime, 0);
+		moveIfCan(192 * deltaTime, 0);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-		moveIfCan(0, -300 * deltaTime);
+		moveIfCan(0, -192 * deltaTime);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-		moveIfCan(0, 300 * deltaTime);
-
+		moveIfCan(0, 192 * deltaTime);
 
 	sf::Vector2f lookDir = sf::Vector2f(Game::getMousePosition()) - sprite.getPosition();
 	sprite.setRotation(std::atan2f(lookDir.y, lookDir.x) * 180.0f / float(M_PI));

@@ -5,10 +5,10 @@ class GameObject
 {
 public:
 	int tag;
+  
 public:
 	GameObject(int tag = 0)
-		: tag(tag)
-	{ }
+		: tag(tag)	{ }
 
 	virtual void update(float deltaTime) {}
 	virtual void render(sf::RenderWindow& window, float deltaTime) {};

@@ -86,7 +86,6 @@ std::vector<GameObject*> Game::getGameObjectsWithTags(std::vector<int> tagList)
 	return instance->level->getGameObjectsWithTags(tagList);
 }
 
-
 const sf::RenderWindow& Game::getWindow()
 {
 	return instance->window;
