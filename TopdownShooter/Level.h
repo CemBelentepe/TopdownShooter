@@ -62,4 +62,18 @@ public:
 		}
 		return ret;
 	}
+
+	std::vector<GameObject*> getGameObjectsWithTags(std::vector<int> tagList)
+	{
+		std::vector<GameObject*> ret;
+		for (auto& go : gameObjects)
+		{
+			for (auto& tag : tagList)
+			{
+				if (go->tag == tag)
+					ret.push_back(go);
+			}
+		}
+		return ret;
+	}
 };

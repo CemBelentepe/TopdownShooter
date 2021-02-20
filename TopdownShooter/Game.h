@@ -26,6 +26,7 @@ public:
 	static sf::Texture& getTexture(const std::string& str);
 	static const Level* getLevel();
 	static std::vector<GameObject*> getGameObjectsWithTag(int tag);
+	static std::vector<GameObject*> getGameObjectsWithTags(std::vector<int> tagList);
 
 	static const sf::RenderWindow& getWindow();
 };
